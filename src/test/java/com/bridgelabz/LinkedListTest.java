@@ -1,17 +1,18 @@
 package com.bridgelabz;
 
+//import org.junit.Assert;
+//import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {
     private Assertions Assert;
 
-    public LinkedListTest(){
-
+    public LinkedListTest() {
     }
-
+    //Method to get three numbers when one node is linked with other key
     @Test
-    void given3NumbersWhenLinkedShouldPassLinkedListTest() {
+    public void given3NumbersWhenLinkedShouldPassLinkedListTest() {
         LinkedList<Integer> myFirstNode = new LinkedList<>(56);
         LinkedList<Integer> mySecondNode = new LinkedList<>(30);
         LinkedList<Integer> myThirdNode = new LinkedList<>(70);
@@ -19,9 +20,21 @@ public class LinkedListTest {
         mySecondNode.setNext(myThirdNode);
         boolean result = myFirstNode.getNext().equals(mySecondNode) && mySecondNode.getNext().equals(myThirdNode);
         Assert.assertTrue(result);
-
     }
-
+    @Test
+    public void given3NumbersWhenAddedToLinkedListShouldBeAddedToTop() {
+        LinkedList<Integer> myFirstNode = new LinkedList<>(70);
+        LinkedList<Integer> mySecondNode = new LinkedList<>(30);
+        LinkedList<Integer> myThirdNode = new LinkedList<>(56);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.add(mySecondNode);
+        myLinkedList.add(myThirdNode);
+        myLinkedList.printMyNode();
+        boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
+                && myLinkedList.tail.equals(myFirstNode);
+        Assert.assertTrue(result);
+    }
     @Test
     public void given3NumbersWhenAppendedShouldBeAddedToLast() {
         LinkedList<Integer> myFirstNode = new LinkedList<>(56);
@@ -38,5 +51,17 @@ public class LinkedListTest {
 
     }
 
+    @Test
+    public void given3NumbersWhenInsertingBetweenShouldPassLinkedListTest() {
+        LinkedList<Integer> myFirstNode = new LinkedList<>(56);
+        LinkedList<Integer> mySecondNode = new LinkedList<>(30);
+        LinkedList<Integer> myThirdNode = new LinkedList<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.insert(myFirstNode,mySecondNode);
+        boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
+        Assert.assertTrue(result);
 
+    }
 }
