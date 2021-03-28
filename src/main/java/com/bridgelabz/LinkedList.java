@@ -1,30 +1,25 @@
 package com.bridgelabz;
 public class LinkedList<K> implements INode<K>{
-    private LinkedList<K> next;
-    private K  key;
-    //Constructor Declaration
-    public LinkedList(K key){
-        this.key = key;
-        this.next = null;
-    }
-    @Override
-    public K getKey() {
-        return key;
-    }
-    @Override
-    public void setKey(K key){
-        this.key = key;
-    }
-    @Override
-    public LinkedList getNext() {
-        return next;
-    }
+    public class LinkedList<K> implements INode<K> {
 
-    @Override
-    public void setNext(INode next) {
-        public void setNext(INode next) {
-            this.next = (LinkedList<K>) next;
+        private LinkedList<K> next;
+        private K  key;
 
-        }
+        private LinkedList<K> next;
 
-    }
+        //Constructor Declaration
+        public LinkedList(K key){
+            @@ -23,7 +22,7 @@ public void setKey(K key){
+            }
+
+            @Override
+            public LinkedList getNext() {
+                public INode<K> getNext() {
+                    return next;
+                }
+
+                @Override
+                public void setNext(INode next) {
+                    this.next = (LinkedList<K>) next;
+                }
+            }

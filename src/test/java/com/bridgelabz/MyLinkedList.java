@@ -30,11 +30,12 @@ public class MyLinkedList {
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
     }
-
     public void append(LinkedList<Integer> mySecondNode) {
     }
 
-
     public void insert(LinkedList<Integer> myFirstNode, LinkedList<Integer> mySecondNode) {
+    }
+
+    public void pop() {
     }
 }
